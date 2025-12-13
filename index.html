@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHIH, YI HAO (CYi)</title>
-    <link rel="icon" type="image/png" href="Assets/Images/CYi.png">
-    <link rel="stylesheet" href="Assets/CSS/style.css">
+    <link rel="icon" type="image/png" href="assets/images/CYi.png">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <div class="container">
         <header>
             <div class="avatar-container">
-                <img src="Assets/Images/CYi.png" alt="Avatar" class="avatar">
+                <img src="assets/images/CYi.png" alt="Avatar" class="avatar">
             </div>
             <h1 id="name">SHIH, YI HAO (CYi)</h1>
             <div class="role">Unity Developer / Game PROGRAMMER</div>
@@ -59,7 +59,7 @@
         </section>
         <br> <br>
         <footer>
-            &2025 Hosted on GitHub Pages.
+            <p>© 2025 SHIH, YI HAO (CYi). All rights reserved.</p>
         </footer>
     </div>
     <button id="back-to-top" class="back-to-top" aria-label="回到頂部">
@@ -75,25 +75,18 @@
 
         // 1. 作品集資料
         const projects = [
-            // {
-            //     title: "Unity 3D 動作 RPG",
-            //     desc: "實作了狀態機 (State Machine) 控制角色行為，包含攻擊連段系統與敵人 AI 尋路功能。",
-            //     tags: ["Unity", "C#", "NavMesh"],
-            //     image: "https://via.placeholder.com/400x200/1a1a1a/c9a87c?text=RPG+Project",
-            //     link: "https://github.com/cyi0310/your-repo-link"
-            // },
             {
                 title: "Atlas Repeat Checker",
                 desc: "Unity 編輯器工具，透過分析圖集(Sprite Atlas)內部的圖片(Sprite/Texture)，並檢測是否有重複的圖集關聯著相同的圖片。",
                 tags: ["Tool", "C#", "Unity", "Analyzes"],
-                image: "https://private-user-images.githubusercontent.com/62579114/457067177-f3bcfd8e-3aa9-4e89-bdbe-7e0d7d7f106f.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU2MTUzNTksIm5iZiI6MTc2NTYxNTA1OSwicGF0aCI6Ii82MjU3OTExNC80NTcwNjcxNzctZjNiY2ZkOGUtM2FhOS00ZTg5LWJkYmUtN2UwZDdkN2YxMDZmLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjEzVDA4MzczOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc0NWJkYWM4M2Y0YmUwNmRiNDQ1YjQxNmZmODBiYWQyODhlYjg4YjlkOTc5YWUyMDI5OTJhNWY1ZWFjZTk5OWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OPVRRsvghmqKoNqWdCPUdzD6DQEN0_1wwQSkRsospQs",
+                image: "assets/images/Blogs_AtlasRepeatChecker.gif",
                 link: "https://github.com/Cyi0310/AtlasRepeatChecker"
             },
             {
                 title: "Animator Parameter",
                 desc: "在Unity的專案環境下，使用指定的Attribute，能取得Animator內部的Parameter功能",
                 tags: ["Tool", "C#", "Unity", "Attribute"],
-                image: "https://private-user-images.githubusercontent.com/62579114/433122992-cff8a344-2218-4361-ad31-a73f6cea1345.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU2MTUyMTAsIm5iZiI6MTc2NTYxNDkxMCwicGF0aCI6Ii82MjU3OTExNC80MzMxMjI5OTItY2ZmOGEzNDQtMjIxOC00MzYxLWFkMzEtYTczZjZjZWExMzQ1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjEzVDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk2YzIyOGZiN2FmNGFlM2U3YmVlNzcyZDQzNGYyOTZkMGYzZjliY2E5NjkyY2IzNjRlNDQ5ZGUyNjJjN2QxMjkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W57sBHvxTqSPBDwJWKpzrxmP6jTh-6zWNr1rRNbzP_8",
+                image: "assets/images/Blogs_AnimatorParameter.gif",
                 link: "https://github.com/Cyi0310/Animator-Parameter"
             }
         ];
