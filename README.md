@@ -1,4 +1,4 @@
 # CYi0310.github.io
-CYi's first and final website :)
+This is my personal website built with pure HTML, CSS, and JavaScript.
 
-Click here --> https://cyi0310.github.io/index.html
+Click here watch more → https://cyi0310.github.io ←

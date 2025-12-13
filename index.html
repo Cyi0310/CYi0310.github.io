@@ -1,124 +1,217 @@
 <!DOCTYPE html>
-<head>    
-    <title>CYI Web</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <style>
-    </style>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIH, YI HAO (CYi)</title>
+    <link rel="icon" type="image/png" href="Assets/Images/CYi.png">
+    <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 
 <body>
-    <header>        
-        <a href ="index.html">
-            <div class="header-logo">            
-               <img src="images/CYi.png" width="64" height="64">                    
-            </div>           
-        </a>    
-        <ui>
-            <li>
-                 <a href ="aboutMe.html">    
-                     <button class="button button1">About me</button>
-                 </a>
-             </li>
+    <div class="bg-animation"></div>
 
-             <li>
-                <a href ="game.html">    
-                    <button class="button button1">Game</button>
-                </a>
-            </li>
-            
-            <li>
-                <a href ="gameBlog.html">    
-                    <button class="button button1">Blog</button>
-                </a>
-            </li>
-            <li>
-                <a href ="index.html">    
-                    <button class="button button1">Contant</button>
-                </a>
-            </li>
-         </ui>        
-            
-    </header>
-    
-    <br> <br> <br> <br> <br>  <br> <br>  
-    <br> <br> <br> <br> <br>  <br> <br>  
+    <!-- 導航列 -->
+    <nav>
+        <div class="nav-container">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#blog" class="nav-link">Blogs</a>
+        </div>
+    </nav>
 
-    <div class="flexbox-container">  
-        <h1>
-        Programmer
-        </h1>        
-    </div>     
+    <div class="container">
+        <header>
+            <div class="avatar-container">
+                <img src="Assets/Images/CYi.png" alt="Avatar" class="avatar">
+            </div>
+            <h1 id="name">SHIH, YI HAO (CYi)</h1>
+            <div class="role">Unity Developer / Game PROGRAMMER</div>
+            <div class="social-links">
+                <a href="https://github.com/cyi0310" target="_blank">GitHub</a>
+                <a href="mailto:cpa11225637@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/%E9%80%B8%E8%B1%AA-%E6%96%BD-910a6a220/"
+                    target="_blank">LinkedIn</a>
+            </div>
+        </header>
 
-    <br> <br> <br> <br> <br>  <br> <br>  
-    <div class="flexbox-container">        
-        <div class="flexbox-item">
-            <div class="container">
-                <a href ="aboutMe.html">
-                    <img src="images/aboutMe.png" alt="Avatar" class="image">
-                    <div class="overlay">
-                    <div class="text">About Me</div>
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>你好！我是一名喜愛遊戲開發的工程師。擅長使用 <strong>Unity</strong> 與 <strong>C#</strong>
+                    ，目前已在台灣累積三年左右的相關經驗，除了平時的工作之外我也對<strong>閱讀技術書籍</strong>、<strong>撰寫心得筆記</strong>
+                    有濃厚興趣，我很享受學習的過程，也持續尋找精進技能的方法。
+                </p>
+                <br>
+                <p>同時我也很喜歡與人交流<strong>遊戲玩法</strong>、<strong>程式技巧</strong>等內容，希望透過作品和更多人交流與成長！</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="grid" id="project-list"></div>
+        </section>
+
+        <section id="blog">
+            <h2>Blogs</h2>
+            <div class="grid" id="blogs-list"></div>
+        </section>
+        <br> <br>
+        <footer>
+            &2025 Hosted on GitHub Pages.
+        </footer>
+    </div>
+    <button id="back-to-top" class="back-to-top" aria-label="回到頂部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+        // ============================================
+        // 資料設定區
+        // ============================================
+
+        // 1. 作品集資料
+        const projects = [
+            // {
+            //     title: "Unity 3D 動作 RPG",
+            //     desc: "實作了狀態機 (State Machine) 控制角色行為，包含攻擊連段系統與敵人 AI 尋路功能。",
+            //     tags: ["Unity", "C#", "NavMesh"],
+            //     image: "https://via.placeholder.com/400x200/1a1a1a/c9a87c?text=RPG+Project",
+            //     link: "https://github.com/cyi0310/your-repo-link"
+            // },
+            {
+                title: "Atlas Repeat Checker",
+                desc: "Unity 編輯器工具，透過分析圖集(Sprite Atlas)內部的圖片(Sprite/Texture)，並檢測是否有重複的圖集關聯著相同的圖片。",
+                tags: ["Tool", "C#", "Unity", "Analyzes"],
+                image: "https://private-user-images.githubusercontent.com/62579114/457067177-f3bcfd8e-3aa9-4e89-bdbe-7e0d7d7f106f.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU2MTUzNTksIm5iZiI6MTc2NTYxNTA1OSwicGF0aCI6Ii82MjU3OTExNC80NTcwNjcxNzctZjNiY2ZkOGUtM2FhOS00ZTg5LWJkYmUtN2UwZDdkN2YxMDZmLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjEzVDA4MzczOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc0NWJkYWM4M2Y0YmUwNmRiNDQ1YjQxNmZmODBiYWQyODhlYjg4YjlkOTc5YWUyMDI5OTJhNWY1ZWFjZTk5OWEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.OPVRRsvghmqKoNqWdCPUdzD6DQEN0_1wwQSkRsospQs",
+                link: "https://github.com/Cyi0310/AtlasRepeatChecker"
+            },
+            {
+                title: "Animator Parameter",
+                desc: "在Unity的專案環境下，使用指定的Attribute，能取得Animator內部的Parameter功能",
+                tags: ["Tool", "C#", "Unity", "Attribute"],
+                image: "https://private-user-images.githubusercontent.com/62579114/433122992-cff8a344-2218-4361-ad31-a73f6cea1345.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjU2MTUyMTAsIm5iZiI6MTc2NTYxNDkxMCwicGF0aCI6Ii82MjU3OTExNC80MzMxMjI5OTItY2ZmOGEzNDQtMjIxOC00MzYxLWFkMzEtYTczZjZjZWExMzQ1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEyMTMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMjEzVDA4MzUxMFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk2YzIyOGZiN2FmNGFlM2U3YmVlNzcyZDQzNGYyOTZkMGYzZjliY2E5NjkyY2IzNjRlNDQ5ZGUyNjJjN2QxMjkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.W57sBHvxTqSPBDwJWKpzrxmP6jTh-6zWNr1rRNbzP_8",
+                link: "https://github.com/Cyi0310/Animator-Parameter"
+            }
+        ];
+
+        // 2. 文章資料
+        const blogs = [
+            {
+                title: "TGDF｜遊戲軟體工程師生存守則｜筆記&心得整理",
+                desc: "「遊戲軟體工程師生存守則」的三大核心：Coding Skill、Knowledge、Direction。這三個方向...",
+                tags: ["TGDF", "軟體工程師", "筆記&心得整理"],
+                date: "Apr 9, 2025",
+                link: "https://medium.com/@cpa11225637/tgdf-%E9%81%8A%E6%88%B2%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%94%9F%E5%AD%98%E5%AE%88%E5%89%87-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-fa556f448185"
+            },
+            {
+                title: "TGDF｜別太敏捷遊戲開發｜筆記&心得整理",
+                desc: "開發遊戲 90% 都是人與人的互動，唯有真正的文化，才能影響人與人的互動， 最後提升...",
+                tags: ["TGDF", "敏捷開發", "筆記&心得整理"],
+                date: "Mar 23, 2025",
+                link: "https://medium.com/@cpa11225637/tgdf-%E5%88%A5%E5%A4%AA%E6%95%8F%E6%8D%B7%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-4b793e4c4e5a"
+            },
+            {
+                title: "TGDF｜以小博大：談小型技術團隊的建構與可迭代的開發架構｜筆記&心得整理",
+                desc: "開發階段，迭代的是介面，當介面決定完後，就可以進入量產期。介面決定了，即使...",
+                tags: ["TGDF", "製成規劃", "筆記&心得整理"],
+                date: "Mar 15, 2025",
+                link: "https://medium.com/@cpa11225637/tgdf-%E4%BB%A5%E5%B0%8F%E5%8D%9A%E5%A4%A7-%E8%AB%87%E5%B0%8F%E5%9E%8B%E6%8A%80%E8%A1%93%E5%9C%98%E9%9A%8A%E7%9A%84%E5%BB%BA%E6%A7%8B%E8%88%87%E5%8F%AF%E8%BF%AD%E4%BB%A3%E7%9A%84%E9%96%8B%E7%99%BC%E6%9E%B6%E6%A7%8B-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-c89886ffece5"
+            },
+            {
+                title: "不是資工畢業，也能當遊戲工程師嗎！｜心得分享",
+                desc: "「開發」的話，製作初期會收到一份企劃書，裡面包含各種功能需求。在這個階段...",
+                tags: ["心得分享"],
+                date: "Jul 15, 2023",
+                link: "https://medium.com/@cpa11225637/%E4%B8%8D%E6%98%AF%E8%B3%87%E5%B7%A5%E7%95%A2%E6%A5%AD-%E4%B9%9F%E8%83%BD%E7%95%B6%E9%81%8A%E6%88%B2%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%97%8E-%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-d4d192e8262f"
+            }
+        ];
+
+        // ============================================
+        // 渲染邏輯
+        // ============================================
+        function renderCards(data, containerId, isProject) {
+            const container = document.getElementById(containerId);
+            let html = '';
+
+            data.forEach(item => {
+                const tagsHtml = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                const imgHtml = isProject && item.image ? `<img src="${item.image}" alt="${item.title}" class="card-img">` : '';
+                const btnText = isProject ? "View Project" : "Read...";
+                const dateHtml = !isProject && item.date ? `<div class="card-date">${item.date}</div>` : '';
+
+                html += `
+                    <div class="card">
+                        ${imgHtml}
+                        <div class="card-body">
+                            <h3 class="card-title">${item.title}</h3>
+                            <div class="tags">${tagsHtml}</div>
+                            <p class="card-desc">${item.desc}</p>
+                            
+                            <div class="card-footer">
+                                <a href="${item.link}" target="_blank" class="btn">
+                                    ${btnText}
+                                </a>
+                                ${dateHtml}
+                            </div>
+                        </div>
                     </div>
-                </a>              
-            </div>         
-        </div>
-    </div>
+                `;
+            });
 
-    <br> <br> <br> <br> <br>  <br> <br>  
-    
-    <div class="flexbox-container">        
-        <div class="flexbox-item">
-            <div class="container">  
-                <a href ="gameBlog.html">              
-                    <img src="images/blog.png" alt="Avatar" class="image">
-                    <div class="overlay">
-                    <div class="text">GameBlog</div>
-                    </div>              
-                </a>
-            </div>         
-        </div>
-        <div class="flexbox-item">
-            <div class="container">
-                <a href ="game.html">      
-                    <img src="images/game.png" alt="Avatar" class="image">
-                    <div class="overlay">
-                    <div class="text">Game</div>
-                    </div>        
-                </a>      
-            </div>         
-        </div>                                  
-    </div>
+            container.innerHTML = html;
+        }
 
-    <br> <br> <br> <br> <br>  <br> <br>  
-    <br> <br> <br> <br> <br>  <br> <br>  
+        // 導航列 active 狀態
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
 
-    <footer class="footer">
-        <button class="button button-footer">
-            <a href="https://www.youtube.com/" target="_blank">
-                <img src="images/youtubeIcon.png" alt="Avatar" class="image">
-            </a>
-        </button>        
-            <button class="button button-footer">
-                <a href="https://cyi0310.itch.io/" target="_blank">        
-                   <img src="images/itchioIcon.png" alt="Avatar" class="image">
-                </a>
-            </button>
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        <button class="button button-footer">
-            <a href="https://www.twitch.tv/" target="_blank">
-                <img src="images/twitchIcon.png" alt="Avatar" class="image">
-            </a>
-        </button>
-        <button class="button button-footer">
-            <img src="images/discordIcon.png" alt="Avatar" class="image">
-        </button>
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
 
-        <button class="button button-footer">
-            <a href="mailto:cpa11225637@gmail.com" target="_blank">
-                <img src="images/mailIcon.png" alt="Avatar" class="image">
-            </a>
-        </button>
-    </footer>
-   
+        // 執行渲染
+        renderCards(projects, 'project-list', true);
+        renderCards(blogs, 'blogs-list', false);
+
+        // 監聽滾動事件
+        window.addEventListener('scroll', updateActiveNav);
+
+        // 回到頂部按鈕功能
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
+
 </html>
