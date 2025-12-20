@@ -5,6 +5,7 @@
 
 // ==================== 語言偵測與切換功能 ====================
 
+import { uiTranslations, projects, blogs } from './data.js';
 // 偵測瀏覽器語言
 function detectDefaultLanguage() {
     // 優先使用用戶選擇的語言
@@ -49,13 +50,6 @@ function changeLanguage(lang) {
 
     // 更新 HTML lang 屬性
     document.documentElement.lang = lang;
-
-    // 1. 更新按鈕狀態
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-    const activeBtn = document.getElementById(`btn-${lang}`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-    }
 
     // 2. 更新靜態文字 (使用 data-i18n 屬性)
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -222,7 +216,11 @@ function initVideoModal() {
 // DOMContentLoaded 確保 DOM 完全載入後才執行
 document.addEventListener('DOMContentLoaded', function () {
     // 1. 載入語言
-    changeLanguage(currentLang);
+    const initialLang = detectDefaultLanguage();
+
+    // 強制觸發 changeLanguage 內部的渲染
+    currentLang = null;
+    changeLanguage(initialLang);
 
     // 2. 初始化導航列狀態
     updateActiveNav();

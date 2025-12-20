@@ -4,7 +4,7 @@
 // ============================================
 
 // 1. UI 靜態文字翻譯
-const uiTranslations = {
+export const uiTranslations = {
     'zh-TW': {
         nav_about: "關於我",
         nav_projects: "專案",
@@ -35,7 +35,7 @@ const uiTranslations = {
 };
 
 // 2. 作品集資料
-const projects = [
+export const projects = [
     {
         title: {
             'zh-TW': "Atlas Repeat Checker",
@@ -85,7 +85,7 @@ const projects = [
 ];
 
 // 3. 文章資料
-const blogs = [
+export const blogs = [
     {
         title: {
             'zh-TW': "TGDF｜遊戲軟體工程師生存守則｜筆記&心得整理",
