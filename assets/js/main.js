@@ -5,7 +5,14 @@
 
 // ==================== 語言偵測與切換功能 ====================
 
+// 順序性問題，需先導入資料，才能做後續顯示
 import { uiTranslations, projects, blogs } from './data.js';
+
+// 將函數暴露給全域 window 物件
+window.changeLanguage = changeLanguage;
+window.openVideoModal = openVideoModal;
+window.closeVideoModal = closeVideoModal;
+
 // 偵測瀏覽器語言
 function detectDefaultLanguage() {
     // 優先使用用戶選擇的語言
@@ -50,6 +57,13 @@ function changeLanguage(lang) {
 
     // 更新 HTML lang 屬性
     document.documentElement.lang = lang;
+
+    // 1. 更新按鈕狀態
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`btn-${lang}`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
+    }
 
     // 2. 更新靜態文字 (使用 data-i18n 屬性)
     document.querySelectorAll('[data-i18n]').forEach(el => {
