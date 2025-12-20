@@ -12,12 +12,23 @@
 <body>
     <div class="bg-animation"></div>
 
-    <!-- 導航列 -->
     <nav>
         <div class="nav-container">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#blog" class="nav-link">Blogs</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+                <a href="#projects" class="nav-link" data-i18n="nav_projects">Projects</a>
+                <a href="#blog" class="nav-link" data-i18n="nav_blog">Blogs</a>
+            </div>
+
+            <div class="lang-switch">
+                <button onclick="changeLanguage('zh-TW')" class="lang-btn active" id="btn-zh-TW"
+                    title="切換到繁體中文">中文</button>
+                <span class="divider">/</span>
+                <button onclick="changeLanguage('en-US')" class="lang-btn" id="btn-en-US"
+                    title="Switch to English">EN</button>
+                <span class="divider">/</span>
+                <button onclick="changeLanguage('ja-JP')" class="lang-btn" id="btn-ja-JP" title="日本語に切り替え">日本語</button>
+            </div>
         </div>
     </nav>
 
@@ -26,8 +37,8 @@
             <div class="avatar-container">
                 <img src="assets/images/CYi.png" alt="Avatar" class="avatar">
             </div>
-            <h1 id="name">SHIH, YI HAO (CYi)</h1>
-            <div class="role">Unity Developer / Game PROGRAMMER</div>
+            <h1 id="name" data-i18n="name">SHIH, YI HAO (CYi)</h1>
+            <div class="role" data-i18n="role">Unity Developer / Game PROGRAMMER</div>
             <div class="social-links">
                 <a href="https://github.com/cyi0310" target="_blank">GitHub</a>
                 <a href="mailto:cpa11225637@gmail.com">Email</a>
@@ -38,40 +49,33 @@
         </header>
 
         <section id="about">
-            <h2>About Me</h2>
+            <h2 data-i18n="nav_about">About Me</h2>
             <div class="about-content">
-                <p>你好！我是一名喜愛遊戲開發的工程師。擅長使用 <strong>Unity</strong> 與 <strong>C#</strong>
-                    ，目前已在台灣累積三年左右的相關經驗，除了平時的工作之外我也對<strong>閱讀技術書籍</strong>、<strong>撰寫心得筆記</strong>
-                    有濃厚興趣，我很享受學習的過程，也持續尋找精進技能的方法。
-                </p>
-                <br>
-                <p>同時我也很喜歡與人交流<strong>遊戲玩法</strong>、<strong>程式技巧</strong>等內容，希望透過作品和更多人交流與成長！</p>
+                <div id="about-text"></div>
             </div>
         </section>
 
         <section id="projects">
-            <h2>Projects</h2>
+            <h2 data-i18n="nav_projects">Projects</h2>
             <div class="grid" id="project-list"></div>
         </section>
 
         <section id="blog">
-            <h2>Blogs</h2>
+            <h2 data-i18n="nav_blog">Blogs</h2>
             <div class="grid" id="blogs-list"></div>
         </section>
-        <br> <br>
+
         <footer>
             <p>© 2025 SHIH, YI HAO (CYi). All rights reserved.</p>
         </footer>
     </div>
 
-    <!-- 回到頂部按鈕 -->
     <button id="back-to-top" class="back-to-top" aria-label="回到頂部">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 19V5M5 12l7-7 7 7" />
         </svg>
     </button>
 
-    <!-- YouTube Modal 彈窗 -->
     <div id="video-modal" class="video-modal">
         <div class="video-modal-content">
             <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
@@ -83,199 +87,9 @@
         </div>
     </div>
 
-    <script>
-        // ============================================
-        // 資料設定區
-        // ============================================
-
-        // 1. 作品集資料
-        const projects = [
-            {
-                title: "Atlas Repeat Checker",
-                desc: "Unity 編輯器工具，透過分析圖集(Sprite Atlas)內部的圖片(Sprite/Texture)，並檢測是否有重複的圖集關聯著相同的圖片。",
-                tags: ["Tool", "C#", "Unity", "Analyzes"],
-                image: "assets/images/Blogs_AtlasRepeatChecker.gif",
-                link: "https://github.com/Cyi0310/AtlasRepeatChecker"
-            },
-            {
-                title: "Animator Parameter",
-                desc: "在Unity的專案環境下，使用指定的Attribute，能取得Animator內部的Parameter功能",
-                tags: ["Tool", "C#", "Unity", "Attribute"],
-                image: "assets/images/Blogs_AnimatorParameter.gif",
-                link: "https://github.com/Cyi0310/Animator-Parameter"
-            },
-            {
-                title: "Moerusa",
-                desc: "Moerusa是一款ARPG的劇情動作遊戲，以2.5D第三人稱為視角，並主打美式卡通風格而打造的遊戲。",
-                tags: ["大學專案", "C#", "Unity"],
-                image: "https://img.youtube.com/vi/ic1C4ENIRlE/sddefault.jpg",
-                videoId: "ic1C4ENIRlE",
-                link: "https://www.youtube.com/watch?v=GklFfVLfeUk"
-            }
-        ];
-
-        // 2. 文章資料
-        const blogs = [
-            {
-                title: "TGDF｜遊戲軟體工程師生存守則｜筆記&心得整理",
-                desc: "「遊戲軟體工程師生存守則」的三大核心：Coding Skill、Knowledge、Direction。這三個方向...",
-                tags: ["TGDF", "軟體工程師", "筆記&心得整理"],
-                date: "Apr 9, 2025",
-                link: "https://medium.com/@cpa11225637/tgdf-%E9%81%8A%E6%88%B2%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%94%9F%E5%AD%98%E5%AE%88%E5%89%87-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-fa556f448185"
-            },
-            {
-                title: "TGDF｜別太敏捷遊戲開發｜筆記&心得整理",
-                desc: "開發遊戲 90% 都是人與人的互動，唯有真正的文化，才能影響人與人的互動， 最後提升...",
-                tags: ["TGDF", "敏捷開發", "筆記&心得整理"],
-                date: "Mar 23, 2025",
-                link: "https://medium.com/@cpa11225637/tgdf-%E5%88%A5%E5%A4%AA%E6%95%8F%E6%8D%B7%E9%81%8A%E6%88%B2%E9%96%8B%E7%99%BC-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-4b793e4c4e5a"
-            },
-            {
-                title: "TGDF｜以小博大：談小型技術團隊的建構與可迭代的開發架構｜筆記&心得整理",
-                desc: "開發階段，迭代的是介面，當介面決定完後，就可以進入量產期。介面決定了，即使...",
-                tags: ["TGDF", "製成規劃", "筆記&心得整理"],
-                date: "Mar 15, 2025",
-                link: "https://medium.com/@cpa11225637/tgdf-%E4%BB%A5%E5%B0%8F%E5%8D%9A%E5%A4%A7-%E8%AB%87%E5%B0%8F%E5%9E%8B%E6%8A%80%E8%A1%93%E5%9C%98%E9%9A%8A%E7%9A%84%E5%BB%BA%E6%A7%8B%E8%88%87%E5%8F%AF%E8%BF%AD%E4%BB%A3%E7%9A%84%E9%96%8B%E7%99%BC%E6%9E%B6%E6%A7%8B-%E7%AD%86%E8%A8%98-%E5%BF%83%E5%BE%97%E6%95%B4%E7%90%86-c89886ffece5"
-            },
-            {
-                title: "不是資工畢業，也能當遊戲工程師嗎！｜心得分享",
-                desc: "「開發」的話，製作初期會收到一份企劃書，裡面包含各種功能需求。在這個階段...",
-                tags: ["心得分享"],
-                date: "Jul 15, 2023",
-                link: "https://medium.com/@cpa11225637/%E4%B8%8D%E6%98%AF%E8%B3%87%E5%B7%A5%E7%95%A2%E6%A5%AD-%E4%B9%9F%E8%83%BD%E7%95%B6%E9%81%8A%E6%88%B2%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%97%8E-%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-d4d192e8262f"
-            }
-        ];
-
-        // ============================================
-        // 渲染邏輯
-        // ============================================
-        function renderCards(data, containerId, isProject) {
-            const container = document.getElementById(containerId);
-            let html = '';
-
-            data.forEach((item, index) => {
-                const tagsHtml = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-                const btnText = isProject ? "View Project" : "Read...";
-                const dateHtml = !isProject && item.date ? `<div class="card-date">${item.date}</div>` : '';
-
-                // 處理圖片/影片
-                let imgHtml = '';
-                if (item.videoId) {
-                    // YouTube 影片：顯示縮圖 + 播放按鈕
-                    const thumbnail = item.image || `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
-                    imgHtml = `
-                        <div class="video-thumbnail" data-video-id="${item.videoId}" onclick="openVideoModal('${item.videoId}')">
-                            <img src="${thumbnail}" alt="${item.title}" class="card-img">
-                            <div class="play-button">
-                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                                    <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)"/>
-                                    <path d="M32 25L55 40L32 55V25Z" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
-                    `;
-                } else if (item.image) {
-                    // 一般圖片/GIF
-                    imgHtml = `<img src="${item.image}" alt="${item.title}" class="card-img">`;
-                }
-
-                html += `
-            <div class="card">
-                ${imgHtml}
-                <div class="card-body">
-                    <h3 class="card-title">${item.title}</h3>
-                    <div class="tags">${tagsHtml}</div>
-                    <p class="card-desc">${item.desc}</p>
-                    <div class="card-footer">
-                        <a href="${item.link}" target="_blank" class="btn">${btnText}</a>
-                        ${dateHtml}
-                    </div>
-                </div>
-            </div>
-        `;
-            });
-
-            container.innerHTML = html;
-        }
-
-        // 導航列 active 狀態
-        function updateActiveNav() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // 執行渲染
-        renderCards(projects, 'project-list', true);
-        renderCards(blogs, 'blogs-list', false);
-
-        // 監聽滾動事件
-        window.addEventListener('scroll', updateActiveNav);
-
-        // 回到頂部按鈕功能
-        const backToTopBtn = document.getElementById('back-to-top');
-
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // YouTube Modal 功能
-        function openVideoModal(videoId) {
-            const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('video-iframe');
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // 防止背景滾動
-        }
-
-        function closeVideoModal() {
-            const modal = document.getElementById('video-modal');
-            const iframe = document.getElementById('video-iframe');
-            iframe.src = ''; // 停止播放
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // 點擊 Modal 外部關閉
-        document.getElementById('video-modal').addEventListener('click', function (e) {
-            if (e.target === this) {
-                closeVideoModal();
-            }
-        });
-
-        // ESC 鍵關閉
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-                closeVideoModal();
-            }
-        });
-    </script>
+    <!-- JavaScript 檔案 -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
