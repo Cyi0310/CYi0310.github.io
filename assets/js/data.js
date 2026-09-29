@@ -10,7 +10,7 @@ export const uiTranslations = {
         nav_projects: "專案",
         nav_blog: "文章",
         role: "Unity 開發者 / 遊戲程式設計師",
-        about_text: `你好！我是一名喜愛遊戲開發的工程師。擅長使用 <strong>Unity</strong> 與 <strong>C#</strong>，目前已在台灣累積三年左右的相關經驗。<br><br>除了平時的工作之外我也對<strong>閱讀技術書籍</strong>、<strong>撰寫心得筆記</strong>有濃厚興趣，我很享受學習的過程，也持續尋找精進技能的方法。<br><br>同時我也很喜歡與人交流<strong>遊戲玩法</strong>、<strong>程式技巧</strong>等內容，希望透過作品和更多人交流與成長！`,
+        about_text: `你好！我是一名喜愛遊戲開發的工程師。擅長使用 <strong>Unity</strong> 與 <strong>C#</strong>，目前已在台灣累積四年左右的相關經驗。<br><br>除了平時的工作之外我也對<strong>閱讀技術書籍</strong>、<strong>撰寫心得筆記</strong>有濃厚興趣，我很享受學習的過程，也持續尋找精進技能的方法。<br><br>同時我也很喜歡與人交流<strong>遊戲玩法</strong>、<strong>程式技巧</strong>等內容，希望透過作品和更多人交流與成長！`,
         btn_view_project: "查看專案",
         btn_read_article: "閱讀文章"
     },
@@ -19,7 +19,7 @@ export const uiTranslations = {
         nav_projects: "Projects",
         nav_blog: "Blog",
         role: "Unity Developer / Game Programmer",
-        about_text: `Hello! I am an engineer passionate about game development, specializing in <strong>Unity</strong> and <strong>C#</strong>. I have accumulated about three years of relevant experience in Taiwan.<br><br>Beyond my daily work, I have a strong interest in <strong>reading technical books</strong> and <strong>writing study notes</strong>. I enjoy the learning process and constantly seek ways to improve my skills.<br><br>I also love exchanging ideas about <strong>gameplay mechanics</strong> and <strong>programming techniques</strong>. I hope to connect and grow with more people through my work!`,
+        about_text: `Hello! I am an engineer passionate about game development, specializing in <strong>Unity</strong> and <strong>C#</strong>. I have accumulated about 4 years of relevant experience in Taiwan.<br><br>Beyond my daily work, I have a strong interest in <strong>reading technical books</strong> and <strong>writing study notes</strong>. I enjoy the learning process and constantly seek ways to improve my skills.<br><br>I also love exchanging ideas about <strong>gameplay mechanics</strong> and <strong>programming techniques</strong>. I hope to connect and grow with more people through my work!`,
         btn_view_project: "View Project",
         btn_read_article: "Read Article"
     },
@@ -28,7 +28,7 @@ export const uiTranslations = {
         nav_projects: "ポートフォリオ",
         nav_blog: "ブログ",
         role: "Unity 開発者 / ゲームプログラマー",
-        about_text: `こんにちは！ゲーム開発が大好きなエンジニアです。<strong>Unity</strong> と <strong>C#</strong> を得意とし、台湾で約3年間の実務経験を積んできました。<br><br>普段の仕事以外にも、<strong>技術書の読書</strong>や<strong>学習ノートの執筆</strong>に強い関心を持っています。学ぶ過程を楽しみ、常にスキルを磨く方法を探求しています。<br><br>また、<strong>ゲームの遊び方</strong>や<strong>プログラミング技術</strong>について交流することも大好きです。作品を通じて、より多くの人と交流し、共に成長できることを願っています！`,
+        about_text: `こんにちは！ゲーム開発が大好きなエンジニアです。<strong>Unity</strong> と <strong>C#</strong> を得意とし、台湾で約4年間の実務経験を積んできました。<br><br>普段の仕事以外にも、<strong>技術書の読書</strong>や<strong>学習ノートの執筆</strong>に強い関心を持っています。学ぶ過程を楽しみ、常にスキルを磨く方法を探求しています。<br><br>また、<strong>ゲームの遊び方</strong>や<strong>プログラミング技術</strong>について交流することも大好きです。作品を通じて、より多くの人と交流し、共に成長できることを願っています！`,
         btn_view_project: "プロジェクトを見る",
         btn_read_article: "記事を読む"
     }
