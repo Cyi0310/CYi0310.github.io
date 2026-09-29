@@ -107,6 +107,23 @@ export const projects = [
         date: "Jan 21 ~ Jan 23, 2022",
         download: "https://drive.google.com/file/d/1CuKxZ2j-QKfAJkAGVoXTyjWtVHjccm45/view",
         link: "https://youtu.be/VuHr2w_vSWo?si=jSyfXXeDAdZG0jet"
+    },
+    {
+        title: {
+            'zh-TW': "Abyss深淵旅人",
+            'en-US': "Abyss",
+            'ja-JP': "Abyss"
+        },
+        desc: {
+            'zh-TW': "是我和兩位2D美術的同學在大學期間製作的第一款遊戲！",
+            'en-US': "This is the first game I made in college with two 2D artist classmates!",
+            'ja-JP': "大学時代に、2D美術担当の同級生2人と一緒に作った、初めてのゲームです！"
+        },
+        tags: ["C#", "Unity"],
+        image: "assets/images/Abyss.png",
+        date: "Sep 30, 2021",
+        download: "https://drive.google.com/drive/folders/1W7ZzPT9kxFKSASfGxyABnAyLj75403vB?usp=sharing",
+        link: "https://youtu.be/-kCuoCW7mFw?si=oDKcViBxEC0EyCBU"
     }
 ];
 
