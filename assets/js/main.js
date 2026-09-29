@@ -102,7 +102,12 @@ function renderCards(data, containerId, isProject) {
         const btnTextKey = isProject ? "btn_view_project" : "btn_read_article";
         const btnText = uiTranslations[currentLang][btnTextKey];
 
-        const dateHtml = !isProject && item.date ? `<div class="card-date">${item.date}</div>` : '';
+        const dateHtml = item.date ?`<div class="card-date">${item.date}</div>` : '';
+
+        // 設置成有 download 連結才會顯示下載按鈕
+        const downloadHtml = item.download
+            ? `<a href="${item.download}" target="_blank" class="btn">${uiTranslations[currentLang].btn_download}</a>`
+            : '';
 
         // 處理圖片/影片
         let imgHtml = '';
@@ -131,7 +136,10 @@ function renderCards(data, containerId, isProject) {
                     <div class="tags">${tagsHtml}</div>
                     <p class="card-desc">${desc}</p>
                     <div class="card-footer">
-                        <a href="${item.link}" target="_blank" class="btn">${btnText}</a>
+                        <div class="card-actions">
+                            ${downloadHtml}
+                            <a href="${item.link}" target="_blank" class="btn">${btnText}</a>
+                        </div>
                         ${dateHtml}
                     </div>
                 </div>

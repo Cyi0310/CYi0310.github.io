@@ -12,7 +12,8 @@ export const uiTranslations = {
         role: "Unity 開發者 / 遊戲程式設計師",
         about_text: `你好！我是一名喜愛遊戲開發的工程師。擅長使用 <strong>Unity</strong> 與 <strong>C#</strong>，目前已在台灣累積四年左右的相關經驗。<br><br>除了平時的工作之外我也對<strong>閱讀技術書籍</strong>、<strong>撰寫心得筆記</strong>有濃厚興趣，我很享受學習的過程，也持續尋找精進技能的方法。<br><br>同時我也很喜歡與人交流<strong>遊戲玩法</strong>、<strong>程式技巧</strong>等內容，希望透過作品和更多人交流與成長！`,
         btn_view_project: "查看專案",
-        btn_read_article: "閱讀文章"
+        btn_read_article: "閱讀文章",
+        btn_download: "下載"
     },
     'en-US': {
         nav_about: "About Me",
@@ -21,7 +22,8 @@ export const uiTranslations = {
         role: "Unity Developer / Game Programmer",
         about_text: `Hello! I am an engineer passionate about game development, specializing in <strong>Unity</strong> and <strong>C#</strong>. I have accumulated about 4 years of relevant experience in Taiwan.<br><br>Beyond my daily work, I have a strong interest in <strong>reading technical books</strong> and <strong>writing study notes</strong>. I enjoy the learning process and constantly seek ways to improve my skills.<br><br>I also love exchanging ideas about <strong>gameplay mechanics</strong> and <strong>programming techniques</strong>. I hope to connect and grow with more people through my work!`,
         btn_view_project: "View Project",
-        btn_read_article: "Read Article"
+        btn_read_article: "Read Article",
+        btn_download: "Download"
     },
     'ja-JP': {
         nav_about: "私について",
@@ -30,7 +32,8 @@ export const uiTranslations = {
         role: "Unity 開発者 / ゲームプログラマー",
         about_text: `こんにちは！ゲーム開発が大好きなエンジニアです。<strong>Unity</strong> と <strong>C#</strong> を得意とし、台湾で約4年間の実務経験を積んできました。<br><br>普段の仕事以外にも、<strong>技術書の読書</strong>や<strong>学習ノートの執筆</strong>に強い関心を持っています。学ぶ過程を楽しみ、常にスキルを磨く方法を探求しています。<br><br>また、<strong>ゲームの遊び方</strong>や<strong>プログラミング技術</strong>について交流することも大好きです。作品を通じて、より多くの人と交流し、共に成長できることを願っています！`,
         btn_view_project: "プロジェクトを見る",
-        btn_read_article: "記事を読む"
+        btn_read_article: "記事を読む",
+        btn_download: "ダウンロード"
     }
 };
 
@@ -49,6 +52,8 @@ export const projects = [
         },
         tags: ["Tool", "C#", "Unity", "Analyzes"],
         image: "assets/images/Blogs_AtlasRepeatChecker.gif",
+        date: "Jun 20, 2025 ~",
+        download: "",
         link: "https://github.com/Cyi0310/AtlasRepeatChecker"
     },
     {
@@ -64,6 +69,8 @@ export const projects = [
         },
         tags: ["Tool", "C#", "Unity", "Attribute"],
         image: "assets/images/Blogs_AnimatorParameter.gif",
+        date: "Apr 13, 2025 ~",
+        download: "",
         link: "https://github.com/Cyi0310/Animator-Parameter"
     },
     {
@@ -73,13 +80,15 @@ export const projects = [
             'ja-JP': "Moerusa"
         },
         desc: {
-            'zh-TW': "Moerusa是一款ARPG的劇情動作遊戲，以2.5D第三人稱為視角，並主打美式卡通風格而打造的遊戲。",
-            'en-US': "Moerusa is a story-driven ARPG action game with a 2.5D third-person perspective, featuring an American cartoon art style.",
-            'ja-JP': "Moerusaは、2.5Dの三人称視点を採用し、アメリカンカートゥーンスタイルを特徴とするストーリー主導型のARPGアクションゲームです。"
+            'zh-TW': "Moerusa是一款ARPG的劇情動作遊戲，以2.5D第三人稱為視角，並主打美式卡通風格而打造的遊戲。\n是我在大學期間與四位 2、3D美術同學 一同製作的大學最後的波紋(專題)",
+            'en-US': "Moerusa is a story-driven ARPG action game with a 2.5D third-person perspective, featuring an American cartoon art style.\nMy university capstone project, developed together with four classmates specializing in 2D and 3D art.",
+            'ja-JP': "Moerusaは、2.5Dの三人称視点を採用し、アメリカンカートゥーンスタイルを特徴とするストーリー主導型のARPGアクションゲームです。\n大学生活最後の集大成として、2D・3Dアートの同級生4人と一緒に作り上げた卒業制作です。`"
         },
         tags: ["大學專案", "C#", "Unity"],
         image: "https://img.youtube.com/vi/ic1C4ENIRlE/sddefault.jpg",
         videoId: "ic1C4ENIRlE",
+        date: "May 22, 2022",
+        download: "https://drive.google.com/drive/folders/1gzCll_0_Yb-rdqGcTrkWmgQbDdd_FoLC?usp=sharing",
         link: "https://www.youtube.com/watch?v=GklFfVLfeUk"
     }
 ];

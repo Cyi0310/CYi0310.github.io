@@ -59,8 +59,15 @@
 .card-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     margin-top: auto;
+}
+
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .card-date {
@@ -82,6 +89,7 @@
     margin-bottom: 20px;
     flex-grow: 1;
     line-height: 1.6;
+    white-space: pre-line;
 }
 
 /* ==================== Tags 標籤 ==================== */
