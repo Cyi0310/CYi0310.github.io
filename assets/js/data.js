@@ -82,7 +82,7 @@ export const projects = [
         desc: {
             'zh-TW': "Moerusa是一款ARPG的劇情動作遊戲，以2.5D第三人稱為視角，並主打美式卡通風格而打造的遊戲。\n是我在大學期間與四位 2、3D美術同學 一同製作的大學最後的波紋(專題)",
             'en-US': "Moerusa is a story-driven ARPG action game with a 2.5D third-person perspective, featuring an American cartoon art style.\nMy university capstone project, developed together with four classmates specializing in 2D and 3D art.",
-            'ja-JP': "Moerusaは、2.5Dの三人称視点を採用し、アメリカンカートゥーンスタイルを特徴とするストーリー主導型のARPGアクションゲームです。\n大学生活最後の集大成として、2D・3Dアートの同級生4人と一緒に作り上げた卒業制作です。`"
+            'ja-JP': "Moerusaは、2.5Dの三人称視点を採用し、アメリカンカートゥーンスタイルを特徴とするストーリー主導型のARPGアクションゲームです。\n大学生活最後の集大成として、2D・3Dアートの同級生4人と一緒に作り上げた卒業制作です。"
         },
         tags: ["大學專案", "C#", "Unity"],
         image: "https://img.youtube.com/vi/ic1C4ENIRlE/sddefault.jpg",
@@ -90,6 +90,23 @@ export const projects = [
         date: "May 22, 2022",
         download: "https://drive.google.com/drive/folders/1gzCll_0_Yb-rdqGcTrkWmgQbDdd_FoLC?usp=sharing",
         link: "https://www.youtube.com/watch?v=GklFfVLfeUk"
+    },
+    {
+        title: {
+            'zh-TW': "磁力卡爾",
+            'en-US': "磁力卡爾",
+            'ja-JP': "磁力卡爾"
+        },
+        desc: {
+            'zh-TW': "玩家本身是一個磁鐵，要藉由切換本身極性來反彈敵人的攻擊，一旦防禦失誤玩家就會遭受傷害，攻防戰途中會有特殊道具出現，將其吸起就會給予回復。\n第一次參加GameJam的作品就遇到了COVID-19 (QAQ)，是與其他五位成員一起製作的作品。",
+            'en-US': "You play as a magnet! Switch your polarity to bounce back enemy attacks, but if you mess up your defense, you take damage. Special items show up during the fight, and if you pull one in, you get healed.\nThis was our first Game Jam, and we ran into COVID-19 (QAQ). We made it together with five other teammates.",
+            'ja-JP': "プレイヤーは磁石！極性を切り替えて、敵の攻撃を跳ね返そう。ガードに失敗するとダメージを受けちゃうよ。バトル中にはスペシャルアイテムが出てくるので、吸い寄せると回復できる！\n初めてのゲームジャムなのに、COVID-19に当たってしまった（QAQ）。仲間5人と一緒に作った作品です。"
+        },
+        tags: ["Global GameJam", "C#", "Unity"],
+        image: "assets/images/Karl.png",
+        date: "Jan 21 ~ Jan 23, 2022",
+        download: "https://drive.google.com/file/d/1CuKxZ2j-QKfAJkAGVoXTyjWtVHjccm45/view",
+        link: "https://youtu.be/VuHr2w_vSWo?si=jSyfXXeDAdZG0jet"
     }
 ];
 
